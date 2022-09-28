@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhóm 1</title>
+</head>
+
+<body>
+    <div class="trang-chinh">
+        <h1>Nhóm 1</h1>
+        <ul class="danh-sach-thanh-vien">
+            <h2>Danh sách thành viên</h2>
+            <li id="nam">Võ Tá Nam</li>
+            <li id="toai">Phan Thành Toại</li>
+        </ul>
+
+        <div class="de-tai">
+            <h2>Đề tài</h2>
+            <p>Quản lý giáo dục</p>
+        </div>
+    </div>
+
+
+    <div class="chuyen-trang"></div>
+</body>
+
+</html>
+
+<style>
+    html {
+        margin: 0;
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .trang-chinh {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80%;
+        height: 80%;
+        box-shadow: 0px 0px 3px 1px black;
+        box-sizing: content-box;
+        overflow: hidden;
+    }
+
+    .trang-chinh h1 {
+        padding-top: 5%;
+        text-align: center;
+    }
+
+    .danh-sach-thanh-vien {
+        margin-top: 10%;
+        list-style-type: none;
+        padding: 0;
+
+    }
+
+    .danh-sach-thanh-vien>* {
+        text-align: center;
+    }
+
+    .danh-sach-thanh-vien li {
+        margin-bottom: 3ch;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        display: block;
+        cursor: pointer;
+        font-size: 4ch;
+        font-family: monospace;
+        user-select: none;
+        position: relative;
+    }
+
+    .danh-sach-thanh-vien li::after {
+        content: 'Click để mở cv';
+        position: absolute;
+        font-size: 1ch;
+        transform: rotate(-10deg);
+        left: -10ch;
+        top: -1ch;
+        transition: ease;
+        transition-duration: 1s;
+    }
+
+    .danh-sach-thanh-vien li.huy::after {
+        content: 'Click để hủy';
+        color: red;
+        transition: ease;
+        transition-duration: 1s;
+        font-size: 1.2ch;
+    }
+
+    h1,
+    h2,
+    p {
+        position: relative;
+        text-align: center;
+        display: block !important;
+    }
+
+    .chuyen-trang {
+        top: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgb(45, 34, 63);
+        opacity: 0.5;
+        display: none;
+    }
+
+    .de-tai {
+        width: 100%;
+    }
+
+    .de-tai p {
+        user-select: none;
+        cursor: no-drop;
+        font-size: 4ch;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        display: inline-block;
+    }
+    .de-tai p::before {
+        content: 'Đang xây dựng';
+        position: absolute;
+        font-size: 1ch;
+        transform: rotate(-10deg);
+        left: -10ch;
+        top: -1ch;
+    }
+
+    * {
+        user-select: none;
+    }
+</style>
+
+<script>
+    document.getElementById('nam').addEventListener('click', function () {
+        if (this.timeout == null) {
+            this.textContent = "Đang chuyển trang...."
+            this.classList.add('huy')
+            this.timeout = setTimeout(() => {
+                window.location.href = 'https://rezarria.github.io/cv';
+                this.timeout = null;
+            }, 2000);
+        } else {
+            this.classList.remove('huy')
+            this.textContent = "Võ Tá Nam";
+            clearTimeout(this.timeout);
+            this.timeout = null;
+        }
+    });
+
+    document.getElementById('toai').addEventListener('click', function () {
+        if (this.timeout == null) {
+            this.textContent = "Đang chuyển trang...."
+            this.classList.add('huy')
+            this.timeout = setTimeout(() => {
+                window.location.href = 'https://thanhtoai123.github.io/cvtoai';
+                this.timeout = null;
+            }, 2000);
+        } else {
+            this.classList.remove('huy')
+            this.textContent = "Phan Thành Toại";
+            clearTimeout(this.timeout);
+            this.timeout = null;
+        }
+    });
+</script>
