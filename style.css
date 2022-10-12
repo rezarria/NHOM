@@ -93,6 +93,10 @@ body {
     color: #241416;
 }
 
+#thong-tin-thanh-vien a {
+    color:inherit;
+}
+
 #thong-tin-do-an {
     background-color: #CDFCF6;
     display: inline-block;
