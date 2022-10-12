@@ -81,20 +81,31 @@ body {
 }
 
 #thong-tin-thanh-vien h1 {
-    font-size: 8vh;
+    font-size: 3vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #422227;
 }
 
-#thong-tin-thanh-vien li{
+#thong-tin-thanh-vien ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#thong-tin-thanh-vien li {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 4vh;
+    font-size: 3vh;
     font-weight: 600;
-    color: #241416;
+    color: #57393d;
+    margin-block: 3vh;
+    border-left-style: solid;
+    border-left-width: 5px;
+    padding-left: 10px;
+    display: block;
+    width: max-content;
 }
 
 #thong-tin-thanh-vien a {
-    color:inherit;
+    color: inherit;
 }
 
 #thong-tin-do-an {
@@ -104,4 +115,18 @@ body {
     height: 100%;
     box-sizing: border-box;
     padding-inline: 20vw;
+}
+
+#thong-tin-do-an h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2vw;
+}
+
+#thong-tin-do-an h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.4vw;
+}
+
+#thong-tin-do-an p {
+    padding-inline: 5%;
 }
